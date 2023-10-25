@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for enhanced colors */
+    .bg-primary-custom {
+      background-color: #FF5733; /* Custom primary color */
+    }
+    .text-custom {
+      color: #008080; /* Custom text color */
+    }
+
+    /* Custom CSS for background image */
+    body {
+      background: url('your-background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary-custom">
+    <a class="navbar-brand text-custom" href="#">Fruit Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-custom" href="/users/logout">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="display-4 text-custom"><%= title %></h1>
+    <p class="lead text-custom">Welcome, <%= uname %></p>
+    
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <!-- Add table header cells here -->
+        </tr>
+      </thead>
+      <tbody>
+        <%- user_cells %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Include Bootstrap JS and jQuery for certain components (e.g., dropdowns and modals) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Add interactivity here
+    $(document).ready(function() {
+      // Example: Add a button click event to show a Bootstrap modal
+      $('#showModalButton').click(function() {
+        $('#exampleModal').modal('show');
+      });
+    });
+  </script>
+</body>
+</html>

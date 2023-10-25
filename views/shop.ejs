@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="text-right">
+      <a href="/users/logout" class="btn btn-danger">Log Out</a>
+    </div>
+    <h1 class="display-4"><%= title %></h1>
+    <p class="lead">Welcome <%= uname %></p>
+    
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <!-- Add table header cells here -->
+        </tr>
+      </thead>
+      <tbody>
+        <%- products_cells %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Include Bootstrap JS and jQuery for certain components (e.g., modal) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
