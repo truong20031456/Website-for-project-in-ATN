@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS for enhanced appearance */
+    body {
+      background: url('your-background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333; /* Change text color */
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.8); /* Change the background color to a semi-transparent white */
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .jumbotron {
+      background: rgba(255, 255, 255, 0.7); /* Change the background color to a semi-transparent white */
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="display-4 text-center"><%= title %></h1>
+    
+    <form action="/users/refreshtime" method="post" class="text-center mb-3">
+      <label for="interval">Update interval (in seconds):</label>
+      <select name="interval" id="intervalDropdown" class="custom-select">
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Set</button>
+    </form>
+    
+    <p class="lead text-center">Welcome</p>
+    
+    <!-- Dropdown menu for Admin/User selection -->
+    <form action="" method="post" class="text-center mb-3">
+      <label for="shop_id">Select Role:</label>
+      <select name="shop_id" id="roleDropdown" class="custom-select">
+        <option value="shop_id">1</option>
+        <option value="shop_id">2</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Select</button>
+    </form>
+  
+    
+    <table class="table table-bordered table-light">
+      <thead>
+        <tr>
+          <!-- Add table header cells here -->
+        </tr>
+      </thead>
+      <tbody>
+        
+        <%- product_cells %>
+        
+        <!-- Include the generated select_form here -->
+      </tbody>
+    </table>
+    
+    <a href="/users/logout" class="btn btn-danger btn-block">Logout</a>
+  </div>
+
+  <!-- Include Bootstrap JS and jQuery for certain components (e.g., modal) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('intervalDropdown').addEventListener('change', function () {
+      var selectedValue = this.value; // Get the selected value from the dropdown
+      if (selectedValue === '10') {
+        // Redirect to a different page based on the selected value
+        window.location.href = '/otherpage'; // Replace '/otherpage' with the actual URL of the page you want to redirect to
+      }
+    });
+  </script>
+</body>
+</html>

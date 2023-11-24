@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: aqua;/* Set the path to your background image */
+
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333; /* Darken the title color */
+    }
+    p {
+      color: #555; /* Set paragraph text color */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="display-4"><%= title %></h1>
+    <p class="lead">Welcome to <%= title %></p>
+    <a href="/users/login" class="btn btn-primary btn-block">Please login</a>
+  </div>
+  <!-- Include Bootstrap JS and jQuery for certain components (e.g., modal) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
